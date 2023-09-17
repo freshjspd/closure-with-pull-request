@@ -1,3 +1,6 @@
-const PORT = process.env.PORT ?? 5000;
+import sum from './math';
+import './style.css';
 
-console.log('PORT :>> ', PORT);
+const a = sum(1, 2);
+
+console.log('a :>> ', a ?? 'not a');

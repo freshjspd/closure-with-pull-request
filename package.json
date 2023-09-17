@@ -2,12 +2,11 @@
   "name": "closure",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "ptivate": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d build",
-    "babel-node": "babel-node --presets=@babel/preset-env",
-    "start": "nodemon --exec npm run babel-node -- ./src/index.js"
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
@@ -22,8 +21,14 @@
   "devDependencies": {
     "@babel/cli": "^7.22.15",
     "@babel/core": "^7.22.20",
-    "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.22.20",
-    "nodemon": "^3.0.1"
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^3.0.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

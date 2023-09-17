@@ -1,23 +1,11 @@
-new node v => babel => old node v  
+Client:
+- совместимость браузеров: new node v => babel => old node v  - babel
+- разрешение импортов (нестандартных)      - webpack loader (npm i -D css-loader style-loader, ...)
+- транспайлинг js (babel)                  - webpack loader (npm i -D babel-loader)
+- + сборка и минификация                   - webpack
+- горячая перезагрузка                     - webpack plugin (webpack-dev-server)
+- + автосоздание html и подвязка к нему js - webpack plugin (html-webpack-plugin)
   
-old node v:    
-  nvm install 12  
-  
-1. npm install --save-dev @babel/core @babel/cli  
-npx babel src -d build => equel map
-
-2. configure babel  
-plugin
-preset = many plugins
-babel.config.json:
-{
-  "presets": ["@babel/preset-env"]
-}
-
-"build": "babel src -d build",
-npm install --save-dev @babel/preset-env  
-
-3. for server:
-npm i -D @babel/node
-"babel-node": "babel-node --presets=@babel/preset-env",
-"start": "nodemon --exec npm run babel-node -- ./src/index.js"
+1. npm install webpack webpack-cli --save-dev  
+loader (babel, scc, images) - резолв импорта и преобразование файлов
+plugin (hot reload, ... )   - различные другие задачи
