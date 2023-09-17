@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const b = 'outer';
+
+      const f = function () {
+        let a = 4;
+
+        function fInner() {
+          return a++;
+        }
+
+        return fInner;
+      };
+
+      const fInner1 = f();
+      console.log('fInner1() :>> ', fInner1());
+      console.log('fInner1() :>> ', fInner1());
+      const fInner2 = f();
+      console.log('fInner2() :>> ', fInner2());
+    </script>
+  </head>
+  <body></body>
+</html>
